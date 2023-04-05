@@ -24,16 +24,30 @@ namespace HealthCheckAPISample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddHealthChecks()
-                .AddDiskStorageHealthCheck(delegate (DiskStorageOptions diskStorageOptions)
-                {
-                    diskStorageOptions.AddDrive(@"C:\", 100);
-                }, name: "My Drive", HealthStatus.Unhealthy)
-                .AddSqlServer(Configuration["ConnectionStrings:DefaultConnection"]);
+            var HC = services;
+            HC.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            HC.AddHealthChecks()
+                .AddTypeActivatedCheck<CustomHealthChecksWithArgs>("public/v2/users",
+                    failureStatus: HealthStatus.Degraded,
+                    tags: new[] { "e-layer" },
+                    args: new object[] { Configuration["DEVConnectionStrings:URI"], "public/v2/users" })
+                .AddTypeActivatedCheck<CustomHealthChecksWithArgs>("public/v2/posts", 
+                    failureStatus: HealthStatus.Degraded,
+                    tags: new[] { "p-layer" },
+                    args: new object[] { Configuration["DEVConnectionStrings:URI"], "public/v2/posts" })
+                .AddTypeActivatedCheck<CustomHealthChecksWithArgs>("public/v2/comments",
+                    failureStatus: HealthStatus.Degraded,
+                    tags: new[] { "s-layer" },
+                    args: new object[] { Configuration["DEVConnectionStrings:URI"], "public/v2/comments" })
+                .AddTypeActivatedCheck<CustomHealthChecksWithArgs>("public/v2/comments2",
+                    failureStatus: HealthStatus.Degraded,
+                    tags: new[] { "s-layer" },
+                    args: new object[] { Configuration["DEVConnectionStrings:URI"], "public/v2/comments2" });
             //.AddCheck("My Database", new SqlConnectionHealthCheck(Configuration["ConnectionStrings:DefaultConnection"])); 
-            services.AddHealthChecksUI();
+            HC.AddHealthChecksUI();
         }
+
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -48,9 +62,19 @@ namespace HealthCheckAPISample
                 app.UseHsts();
             }
             // HealthCheck middleware
-            app.UseHealthChecks("/hc", new HealthCheckOptions()
+            app.UseHealthChecks("/e-layer", new HealthCheckOptions()
             {
-                Predicate = _ => true,
+                Predicate = (check) => check.Tags.Contains("e-layer"),
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            });
+            app.UseHealthChecks("/p-layer", new HealthCheckOptions()
+            {
+                Predicate = (check) => check.Tags.Contains("p-layer"),
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            });
+            app.UseHealthChecks("/s-layer", new HealthCheckOptions()
+            {
+                Predicate = (check) => check.Tags.Contains("s-layer"),
                 ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
             });
             app.UseHealthChecksUI(delegate (Options options)

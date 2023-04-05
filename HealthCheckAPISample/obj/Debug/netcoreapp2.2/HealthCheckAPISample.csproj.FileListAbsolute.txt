@@ -1,0 +1,17 @@
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\bin\Debug\netcoreapp2.2\HealthCheckAPISample.deps.json
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\bin\Debug\netcoreapp2.2\HealthCheckAPISample.runtimeconfig.json
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\bin\Debug\netcoreapp2.2\HealthCheckAPISample.runtimeconfig.dev.json
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\bin\Debug\netcoreapp2.2\HealthCheckAPISample.dll
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\bin\Debug\netcoreapp2.2\HealthCheckAPISample.pdb
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\obj\Debug\netcoreapp2.2\HealthCheckAPISample.AssemblyInfoInputs.cache
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\obj\Debug\netcoreapp2.2\HealthCheckAPISample.AssemblyInfo.cs
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\obj\Debug\netcoreapp2.2\HealthCheckAPISample.csproj.CoreCompileInputs.cache
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\obj\Debug\netcoreapp2.2\HealthCheckAPISample.RazorAssemblyInfo.cache
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\obj\Debug\netcoreapp2.2\HealthCheckAPISample.RazorAssemblyInfo.cs
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\obj\Debug\netcoreapp2.2\HealthCheckAPISample.RazorTargetAssemblyInfo.cache
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\obj\Debug\netcoreapp2.2\HealthCheckAPISample.dll
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\obj\Debug\netcoreapp2.2\HealthCheckAPISample.pdb
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\obj\Debug\netcoreapp2.2\HealthCheckAPISample.genruntimeconfig.cache
+C:\Users\ngrab\Source\Repos\HealthCheckAPISample2\HealthCheckAPISample\obj\Debug\netcoreapp2.2\HealthCheckAPISample.csprojAssemblyReference.cache
